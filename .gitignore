@@ -1,0 +1,5 @@
+# Fichiers qui ne doivent pas être publiés
+/*.mp4
+desktop.ini
+Thumbs.db
+A-COMPLETER.md
