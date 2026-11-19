@@ -236,6 +236,16 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---------- Vidéo intégrée : bouton lecture central ---------- */
+  var inlineVideo = document.querySelector(".video-frame video");
+  var inlinePlay = document.querySelector("[data-video-play]");
+  if (inlineVideo && inlinePlay) {
+    inlinePlay.addEventListener("click", function () { inlineVideo.play(); });
+    inlineVideo.addEventListener("play", function () { inlinePlay.hidden = true; });
+    inlineVideo.addEventListener("pause", function () { if (!inlineVideo.ended) inlinePlay.hidden = false; });
+    inlineVideo.addEventListener("ended", function () { inlinePlay.hidden = false; });
+  }
+
   /* ---------- Video modal ---------- */
   var vModal = document.querySelector("[data-video-modal]");
   var vIframe = document.querySelector("[data-video-iframe]");
